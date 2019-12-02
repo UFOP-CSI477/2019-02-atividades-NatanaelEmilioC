@@ -10,10 +10,15 @@
     <div class="content">
         <!--FORMULÁRIO DE CADASTRO-->
         <div id="cadastro">
-            <form method="post" action="{{ route('users.edit',['user' => $user->id]) }}">
+            <form method="post" action="{{ route('user.update',['user' => $user->id]) }}">
                 @csrf
                 @method('PUT')
                 <h1>Editar Cadastro</h1>
+
+                <p>
+                    <label for="nome_edit">Tipo de Usuário</label>
+                    <input value="{{ $user->type }}" id="tipo_edit" name="tipo_edit" required="required" type="text" placeholder="1 ou 2" />
+                </p>
 
                 <p>
                     <label for="nome_edit">Seu nome</label>

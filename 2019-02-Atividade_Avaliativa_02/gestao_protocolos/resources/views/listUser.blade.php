@@ -7,6 +7,7 @@
 <body>
 
         <p>{{ $user->id }}</p>
+        <p>{{ $user->type }}</p>
         <p>{{ $user->name }}</p>
         <p>{{ $user->email }}</p>
         <p>{{ date('d/m/Y H:i', strtotime($user->created_at)) }}</p>

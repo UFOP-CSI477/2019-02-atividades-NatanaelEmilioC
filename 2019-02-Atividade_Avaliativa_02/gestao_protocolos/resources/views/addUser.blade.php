@@ -10,9 +10,13 @@
     <div class="content">
         <!--FORMULÁRIO DE CADASTRO-->
         <div id="cadastro">
-            <form method="post" action="{{ route('users.store') }}">
+            <form method="post" action="{{ route('user.store') }}">
                 @csrf
                 <h1>Cadastro</h1>
+                <p>
+                    <label for="tipo_cad">Tipo</label>
+                    <input id="tipo_cad" name="tipo_cad" required="required" type="text" placeholder="1 ou 2" />
+                </p>
 
                 <p>
                     <label for="nome_cad">Seu nome</label>
