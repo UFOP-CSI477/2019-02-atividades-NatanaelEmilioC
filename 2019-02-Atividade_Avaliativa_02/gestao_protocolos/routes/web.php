@@ -11,6 +11,27 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route::get('listagem-usuario', 'UserController@listUser');
+
+//Route::group(['namespace' => 'Form'],function(){
+//});
+
+
+Route::get('usuarios','UserController@listAllUsers')->name('users.listAll');
+Route::get('usuarios/novo','UserController@formAddUser')->name('users.formAddUser');
+Route::get('usuarios/editar/{user}','UserController@formEditUser')->name('users.formEditUser');
+Route::get('usuarios/{user}','UserController@listUser')->name('users.list');
+
+Route::post('usuarios/store', 'UserController@storeUser')->name('users.store');
+
+Route::put('usuarios/edit/{user}', 'UserController@edit')->name('users.edit');
+
+Route::delete('usuarios/destroy/{user}', 'UserController@destroy')->name('user.destroy');
+
+
